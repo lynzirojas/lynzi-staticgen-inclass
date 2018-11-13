@@ -1,11 +1,11 @@
 {% extends '_layouts/base.njk' %}
 
-{% block page_title %}New index page title{% endblock %}
+{% block page_title %}The Ship's Log{% endblock %}
 
 {% block content %}
 
 <div class="container">
-  <div class="row">
+  {# <div class="row">
     <div class="col">
     <h1>Main headline</h1>
     <p class="author">By {% for author in authors %}
@@ -13,15 +13,18 @@
       <br> Published {{ publish_date }}
     </p>
     </div>
-  </div>
+  </div> #}
   <div class="row">
-    <div class="col">
+    <div class="col-sm-2 col-xs-12 col-lg-3"></div>
+    <div class="col-sm-8 col-xs-12 col-lg-6">
     <p>
-      Lucas ipsum dolor <a href="detail-page.html">link to detail-page.html</a> amidala sith dooku solo moff organa obi-wan windu. Gamorrean binks wedge darth. Mon darth mon kit ponda solo. Moff watto ackbar mothma moff anakin. Lando skywalker lars fett calrissian lars organa. Organa kenobi wedge darth jawa skywalker anakin. Twi'lek kit darth calamari lando kamino droid. Darth jawa fett grievous maul. Palpatine obi-wan leia tusken raider dagobah. Twi'lek qui-gon boba antilles yoda thrawn. Wampa luuke wampa skywalker. Moff ponda ackbar dagobah kit lobot jinn solo.
+      Welcome to my blog! My name is <a href="detail-page.html">Lynzi Rojas</a> and here, you can read the tales of my adventures on the big, blue sea. I have encountered strange creatures, faraway places, and ascertained incredible knowledge about things that I had no idea existed. My travels have taught me more than you can imagine and I want to share it all with you. 
     </p>
       <ul> 
         {% for entry in entries %}
-          <li>{{ entry.title }}, {{ entry.date }}, {{ entry.url}}</li>
+        <h3 class="entry-headline"><a href="{{ entry.url }}">{{ entry.title }}      </a></h3>
+        <p class="entry-date">{{ entry.date }}</p>
+        <hr>
         {% endfor %}
         {# {% for book in books %}
           <li>{{ book.title }}, {{ book.author }}</li>
@@ -30,6 +33,7 @@
         {% endfor %} #}
      </ul>
     </div>
+    <div class="col-sm-2 col-xs-12 col-lg-3"></div>
   </div>
 </div>
 {% endblock %}
